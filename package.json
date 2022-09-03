@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx eleventy --serve",
-    "build": "env NODE_ENV=production npx eleventy --pathprefix 'prueba-blog'",
-    "debug": "DEBUG=* npx eleventy",
-    "test": "jest"
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'prueba-blog'"
   },
   "keywords": [],
   "author": "",
