@@ -8,9 +8,14 @@
     "build": "env NODE_ENV=production npx eleventy --pathprefix 'prueba-blog'"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ever Vino",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2"
+  },
+  "dependencies": {
+    "@iktakahiro/markdown-it-katex": "^4.0.1",
+    "markdown-it": "^13.0.1"
+    
   }
 }
