@@ -1,4 +1,5 @@
 const {DateTime} = require("luxon");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(eleventyConfig) {
     
@@ -6,11 +7,17 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/style.css");
     eleventyConfig.addPassthroughCopy("./src/assets");
 
-   
+    // To highlight code
+    eleventyConfig.addPlugin(syntaxHighlight);
+    
+    // Adding to render math equations
     let markdownIt = require("markdown-it");
     let markdownItKatex = require("@iktakahiro/markdown-it-katex");
     let options = {
-        html: true
+        html: true,
+        breaks: true,
+        linkify: true,
+        typographer: true,
     };
     let markdownLib = markdownIt(options)
     markdownLib.use(markdownItKatex);

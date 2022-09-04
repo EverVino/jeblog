@@ -11,11 +11,11 @@
   "author": "Ever Vino",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0"
   },
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "^4.0.1",
     "markdown-it": "^13.0.1"
-    
   }
 }
