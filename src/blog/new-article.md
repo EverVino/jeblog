@@ -28,6 +28,8 @@ $$\begin{array}{c}
 $$\textcolor{#228B22}{F=ma}$$
 
 ```python
+# funcion que sirve para generar un factorial
+array = "string"
 def factorial(n):
     if n < 1:
         return n

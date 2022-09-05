@@ -4,24 +4,40 @@
   --fs-500: 1.375rem;
   --fs-600: 1.875rem;
   --fs-700: 2rem;
-
-  --ff-body: "Roboto", sans-serif;
+  /* "Roboto", sans-serif; Roboto Serif,  ui-serif,*/
+  --ff-body: oxigen, Georgia,Cambria,Times New Roman,Times,serif;
   --ff-heading: "Playfair Display", serif;
 
   --fw-400: 400;
   --fw-700: 700;
   --fw-900: 900;
 
-  --clr-primary-200: hsla(169, 70%, 95%, 1);
+  /* --clr-primary-200: hsla(169, 70%, 95%, 1);
   --clr-primary-300: hsla(169, 100%, 39%, 1);
   --clr-primary-400: hsla(169, 100%, 26%, 1);
-  --clr-primary-500: hsla(169, 100%, 16%, 1);
+  --clr-primary-500: hsla(169, 100%, 16%, 1); */
 
-  --clr-neutral-100: hsla(0, 0%, 100%, 1);
+  /* --clr-primary-200: #e6f4f1;
+  --clr-primary-300: #effcff;
+  --clr-primary-400: #00a6df;
+  --clr-primary-500: #00a9cb; */
+
+  --clr-primary-200: #e6f4f1;
+  --clr-primary-300: #edfcff;
+  --clr-primary-400: #2b91af;
+  --clr-primary-500: #005974;
+  --clr-primary-700: #003e59;
+  /* --clr-neutral-100: hsla(0, 0%, 100%, 1);
   --clr-neutral-300: hsla(0, 0%, 50%, 1);
   --clr-neutral-400: hsla(0, 0%, 40%, 1);
   --clr-neutral-500: hsla(0, 0%, 60%, 1);
-  --clr-neutral-900: hsla(0, 0%, 10%, 1);
+  --clr-neutral-900: hsla(0, 0%, 10%, 1); */
+
+  --clr-neutral-100: #e6f4f1;
+  --clr-neutral-300: #9db4bf;
+  --clr-neutral-400: #788f99;
+  --clr-neutral-500: #556c75;
+  --clr-neutral-900: #344a53;
 }
 
 @media (min-width: 35em) {
@@ -160,6 +176,7 @@ section,
   margin-inline: auto;
   padding-inline: 1.5em;
   max-width: 72rem;
+  font-size: larger;
 }
 
 .container--narrow {
@@ -212,6 +229,7 @@ section,
 
 .nav-list a {
   color: var(--clr-neutral-900);
+  font-size: larger;
   text-decoration: none;
 }
 
@@ -451,7 +469,7 @@ section,
  .token.prolog,
  .token.doctype,
  .token.cdata {
-   color: #008000;
+   color: #00836a;
    font-style: italic;
  }
  
@@ -460,7 +478,7 @@ section,
  }
  
  .token.string {
-   color: #A31515;
+   color: #c35355;
  }
  
  .token.punctuation,
@@ -485,11 +503,11 @@ section,
  .language-json .token.boolean,
  .language-json .token.number,
  code[class*="language-css"] {
-   color: #0000ff;
+   color: var(--clr-primary-500);/*#0000ff;*/
  }
  
  .token.function {
-   color: #393A34;
+   color: #344a53;
  }
  
  .token.deleted,
@@ -517,7 +535,7 @@ section,
  
  .token.class-name,
  .language-json .token.property {
-   color: #2B91AF;
+   color: #2b91af;/*#2B91AF;*/
  }
  
  .token.tag,
