@@ -92,7 +92,7 @@ $\hat{y}_i$: es el valor que obtenemos al aplicar nuestra fórmula de regresión
 ## Programando la solución con python
 
 Codificando con python tenemos:
-_Para replicar el ejercicio en python puede descargar el archivo de datos del benceno  [aquí](https://gist.github.com/EverVino/026e9e745ddd078b64d3b643b1068a9c/archive/86ae999a475390b759b53b3e1d6d90014e10b802.zip)_
+*Para replicar el ejercicio en python puede descargar el archivo de datos del benceno [aquí](https://gist.githubusercontent.com/EverVino/026e9e745ddd078b64d3b643b1068a9c/raw/86ae999a475390b759b53b3e1d6d90014e10b802/datos_benceno_P_T.csv) recuerde guardarlo con 'datos_antoine.csv' que es el mismo que usamos en el código.*
 
 ```py
 import numpy as np
