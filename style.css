@@ -245,7 +245,7 @@ section,
 
 .nav-list a {
   color: var(--clr-neutral-900);
-  font-size: larger;
+  
   text-decoration: none;
 }
 
