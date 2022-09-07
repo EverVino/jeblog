@@ -9,5 +9,8 @@ css
 .env
 .log
 
-# macOS related files
-.DS_Store
+
+ejercicio.py
+datos_antoine.csv
+design-files
+

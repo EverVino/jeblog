@@ -1,0 +1,33 @@
+--- 
+title: Acerca de mi
+layout: "base.njk"
+---
+      
+<section class="hero">
+  <div class="container flow">
+      <div class="hero__content flow">
+        <h1 class="section-title">Acerca del Autor </h1>
+        <p>Soy John Ever Vino Duran, nacido en Bolivia, con formación en Ingeniería Ambiental. Luego de pasar por la universidad y trabajar en el sector de Seguridad Industrial y Tratamiento de Aguas, decidi expandir mis conocimientos en el área informática, ahora tengo el rango <i>fanatic</i> en <a href="https://www.codeabbey.com/" >CodeAbbey</a> y colaboro con <a href="opensciencelabs.org"> OpenScienceLabs</a> que es un proyexto Open Source para compartir conocimientos en Ciencia de datos y DevOps</p>
+        <p>Entre los intereses que tengo estan Métodos  númericos, JavaScript, Ciencia de datos y Machine Learning. Estaré subiendo en este blog  mis travesía hacia el dominio de esas áreas</p>
+        {# <div class="flex-group">
+          <a href="#featured-articles" class="btn btn--primary">Artículos recomendados</a>
+          <a href="./blog" class="btn btn--neutral">Artículos recientes</a>
+        </div> #}
+      </div>
+      <div>
+        <img src="//unsplash.it/510" alt="" class="hero__image">
+      </div>
+  </div>
+</section>
+
+{# <section id="featured-articles" class="featured-articles">
+  <div class="container flow">
+    <h2 class="section-title text-center ">Artículos recomendados</h2>
+    <p class="text-center">Una muestra de los artículos del blog Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
+    <ul role="list" class="articles__list flow"><li>
+      {%- for post in collections.featured | reverse -%}
+        {% include "article-snippet.njk" %}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>  #}

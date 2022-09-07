@@ -24,7 +24,7 @@ layout: "base.njk"
 <section id="featured-articles" class="featured-articles">
   <div class="container flow">
     <h2 class="section-title text-center ">Artículos recomendados</h2>
-    <p class="text-center">Una muestra de los artículos del blog Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
+    <p class="text-center">Una muestra de los artículos del blog. Te dará una idea de que va este blog.</p>
     <ul role="list" class="articles__list flow"><li>
       {%- for post in collections.featured | reverse -%}
         {% include "article-snippet.njk" %}

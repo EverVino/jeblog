@@ -1,7 +1,7 @@
 import numpy as np
 import csv
-
 import matplotlib.pyplot as plt
+
 P, T = [], []
 
 with open("datos_antoine.csv", "r" ) as f:
@@ -11,8 +11,6 @@ with open("datos_antoine.csv", "r" ) as f:
         P.append(float(line["P"].replace(",", ".")))
         T.append(float(line["T"].replace(",", ".")))
 
-print(P)
-print(T)
 presion = np.array(P)
 temp = np.array(T)
 
@@ -30,13 +28,23 @@ C = -b[2]
 B = A*C-b[1]
 print(A, B, C)
 
-data_temp = np.linspace(-60, 100, 100)
+data_temp = np.linspace(-60, 80, 100)
 data_pres = 10**(A-B/(data_temp+C))
 
-plt.plot(data_temp, data_pres,"-", label ="Regresion")
-plt.plot(T, P, "k*", label ="datos exp")
-plt.xlabel("Temperatura [°C]")
-plt.ylabel("Presión [mmHg]")
-plt.title("P vs T (Benceno)", fontsize = 18)
-plt.legend(loc=2)
+font = {'family': 'serif',
+        'color':  'xkcd:lightish blue',
+        'weight': 'normal',
+        'size': 12,
+        }
+
+plt.plot(data_temp, data_pres,"-", label ="Regresion", color='xkcd:dark gray', alpha= 0.7, zorder=2)
+plt.gca().spines['top'].set_visible(False)
+plt.gca().spines['right'].set_visible(False)
+
+plt.scatter(T, P, marker="x", color='red', label ="Datos experimentales")
+plt.xlabel("Temperatura (°C)", labelpad=10, fontdict = font)
+plt.ylabel("Presión (mmHg)", labelpad=10, fontdict=font)
+plt.yticks(rotation=45)
+plt.title("Curva de presión vs temperatura \npara el Benceno", fontdict= font, pad=20)
+plt.legend(loc=2, fontsize=10)
 plt.show()
