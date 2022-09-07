@@ -21,15 +21,15 @@ $$\begin{array}{l|c|r} t_{0} & h_{0}=0 & \\ \hline t_{1}=12:00& h_{1} & x_{1}=0\
 
 Donde $t$: tiempo en horas; $h$: altura de la nieve; $x$: distancia recorrida por el quitanieve en millas.
 
-Podemos afirmar razonablemente que el quitanieves saca la nieve a caudal constante $\dot{q}$ y que la altura de la nieve se incrementa con el tiempo a una rapidez $\dot{k}$ y con $w$ como el ancho del quitanieves, podemos establecer las ecuaciones diferenciales.
+Podemos afirmar razonablemente que el quitanieves saca la nieve a caudal constante $\dot{q}$ y que la altura de la nieve se incrementa con el tiempo a una rapidez $\dot{k}$, haciendo $w$ como el ancho del quitanieves, podemos establecer las ecuaciones diferenciales.
 
-La siguiente ecuación para la altura de la nieve es válida en todo el rango  $t_{0}$ a $t_{3}$
+La ecuación para la altura de la nieve $(A)$  es válida en todo el rango  $t_{0}$ a $t_{3}$
 
 $$
  \dfrac{dh}{dt}=\dot{k}\space\space\space\space\space\space(A)
 $$
 
-Y la ecuación del quitanieve válida en el rango $t_{1}$ a $t_{3}$ es:
+Y la ecuación del quitanieve $(B)$ es válida en el rango $t_{1}$ a $t_{3}$ 
 
 $$\dfrac{d\left(w\cdot h\cdot x\right)}{dt}=\dot{q}\space\space\space\space\space\space(B)$$
 
@@ -49,7 +49,7 @@ Dividiendo ambas encuaciones y sabiendo que $t_{2}=13$ y $t_{3}=14$ obtenemos:
 
 $$\frac{h_{2}}{h_{3}}=\frac{13-t_{0}}{14-t_{0}}\space\space\space\space\space\space(C)$$
 
-Con la ecuación $(B)$, separando variables e integrando en el intervalo $t_{1}$ y $t_{2}$ y luego en el intervalo $t_{2}$ y $t_{3}$
+Con la ecuación $(B)$, separando variables e integrando en el intervalo $t_{1}$ y $t_{2}$ y luego en el intervalo $t_{2}$ y $t_{3}$ tenemos
 
 *Recuerde el teorema fundamental del cálculo $\int _{a}^{b}\mathrm{d}(F(x))= F(b)-F(a)$*
 
@@ -78,3 +78,13 @@ $$t_{0}=10$$
 Empezó a nevar a las 10:00 en la mañana.
 
 So that's was all folks!
+
+## Aclaraciones finales
+
+_Nota: En muchas de las resoluciones para este problema, se sacan del bolsillo, de que la velocidad del quitanieve es inversamente proporcional a la altura de la nieve es decir $\frac{dx}{dt} \varpropto \frac{1}{h}$ lo cuál no tiene ningún sentido, no considera el aporte de la velocidad de incremento de altura de la nieve $\frac{dh}{dt}$ a la velocidad del quitanieve. Una ecuación apropiada para describir el fenómeno aproximado se deriva de la ecuación $(B)$:_
+
+$$
+w\left( x\frac{dh}{dt}+h\frac{dx}{dt} \right) = \dot{q}
+$$
+
+_En la ecuación anterior se observa el aporte diferencial en dos dimensiones, notese que si reemplaza la proporcionalidad sugerida, esta ecuación pierde su sentido haciendo que $h\frac{dx}{dt} = constante$ lo cuál no es cierto porque sabemos que $h$ varía_

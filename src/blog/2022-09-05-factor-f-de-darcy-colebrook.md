@@ -5,28 +5,28 @@ date: 2022-09-05
 tags: ['post', 'featured']
 image: /assets/blog/article-2.jpg
 imageAlt: 
-description: Resolución del cálculo del factor f de Darcy con la ecuación de Colebrook, usando el método del punto fijo
+description: Cálculo del factor de fricción f de Darcy con la ecuación de Colebrook, usando el método del punto fijo.
 ---
 
-A pesar de que puede parecer difícil resolver f en la ecuación de Colebrook este se resulte rápidamente aplicando en método del punto fijo.
+El despejar el factor de fricción $f$ en la ecuación de Colebrook puede parecer difícil pero se resuelve rápidamente, aplicando en método del punto fijo.
 
 ## Problema
 
 Halle el factor f de Darcy de la ecuación de Colebrook con el número de Reynolds $Re=10^5$ y factor de rugosidad relativa $eps=10^{-4}$.
 
+La ecuación de colebrook
+
 $$\frac{1}{\sqrt{f}}+2\log_{10}\left(\frac{eps}{3.71}+\frac{2.51}{Re\sqrt{f}}\right)=0$$
 
 ## Resolución
 
-Simplifiquemos un poco la ecuación y resolvamos con python.
-
-Para simplificar la resolución hacemos el cambio de variable $y=\frac{1}{\sqrt{f}}$.
+Simplificando la ecuación haciendo $y=\frac{1}{\sqrt{f}}$.
 
 Así nuestra nueva ecuación es:
 
 $$y=-2\log_{10}\left(\frac{eps}{3.71}+\frac{2.51}{Re}y\right)$$
 
-Esta es la ecuación que utilizaremos para resolver la ecuación, una vez resuelta  regresamos a la variable original.
+Esta es la que utilizaremos para resolver para $y$, una vez resuelta,regresamos a la variable original $f$.
 
 Codificando en python:
 

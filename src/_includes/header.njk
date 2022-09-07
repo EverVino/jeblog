@@ -2,23 +2,23 @@
   <div class="container">
     <div class="page-header__content">
       <div>
-        <img src="{{ '/assets/logo-azul.png' | url }}" alt="logo de ever" style="width: 100px">
-</svg>
+        <a href='{{ "/" | url }}'>
+        <img src="{{ '/assets/logo-azul.png' | url }}" alt="logo de ever" style="width: 90px">
+        </a>
       </div>
+
       <nav>
         
         <ul role="list" class="nav-list flex-group">
           <li>
-            <a href='{{ "/" | url }}'>Home</a>
-          </li>
-          <li>
             <a href='{{ "/blog" | url }}'>Blog</a>
           </li>
           <li>
-            <a href='{{ "/contact" | url }}'>Contacto</a>
+            <a href='{{ "/contact" | url }}'>Acerca de mi</a>
           </li>
         </ul>
       </nav>
+      
     </div>
   </div>
 </header>

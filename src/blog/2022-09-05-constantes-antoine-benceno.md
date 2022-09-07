@@ -10,11 +10,11 @@ description: Aquí calculamos los constante de Antoine para el Benceno a partir 
 
 ## Constantes de Antoine para el Benceno
 
-Los datos de presión de vapor del Benceno a diferentes estan dadas en la siguiente tabla. Determine sus correspondientes Contantes de Antoine.
+Los datos de presión de vapor del Benceno a diferentes temperaturas estan dadas en la siguiente tabla. Determine las correspondientes constantes de Antoine.
 
 $$
-\begin{array}{c|c|c|c} Temperatura(°C) & Presión(mmHg) & Temperatura(°C) & Presión(mmHg)\\ \hline -56.67 & 381.14 & -51.11 & 502.67\\ -45.56 & 651.61& -40.0 & 837.78\\ -34.44 & 1049.81& -28.89 & 1313.56\\ -23.33 & 1623.85& -17.78 & 1975.51\\ -12.22 & 2378.89& -6.67 & 2870.18 \\ -1.11 & 3428.70 & 4.44 & 4033.76 \\ 10.00 & 4747.43 & 15.56 & 5537.67 \\ 21.11 & 6412.65 & 26.67 & 7384.89 \\ 32.22 & 8481.25 & 37.78 & 9670.69 \\ 43.33 & 11015.28 & 48.89 & 12411.58 \\ 
-\end{array} 
+\begin{array}{c|c|c|c} Temperatura(°C) & Presión(mmHg) & Temperatura(°C) & Presión(mmHg)\\ \hline -56.67 & 381.14 & -51.11 & 502.67\\ -45.56 & 651.61& -40.0 & 837.78\\ -34.44 & 1049.81& -28.89 & 1313.56\\ -23.33 & 1623.85& -17.78 & 1975.51\\ -12.22 & 2378.89& -6.67 & 2870.18 \\ -1.11 & 3428.70 & 4.44 & 4033.76 \\ 10.00 & 4747.43 & 15.56 & 5537.67 \\ 21.11 & 6412.65 & 26.67 & 7384.89 \\ 32.22 & 8481.25 & 37.78 & 9670.69 \\ 43.33 & 11015.28 & 48.89 & 12411.58 \\
+\end{array}
 $$
 _Fuente: [cheegineering](http://cheengineering.blogspot.com/2007_10_01_archive.html)_
 
@@ -22,15 +22,19 @@ La Ecuación de Antoine tiene la forma:
 
 $$\log_{10} P = A-\frac{B}{T+C}$$
 
-Podemos reordenar nuestra ecuación para hallar las constantes a partir de una regresión multilineal.
+Reordenando la ecuación para realizar una regresión multilineal.
 
 $$T \cdot \log_{10}P +C\cdot \log_{10}P =A\cdot T+A\cdot C-B $$
 
 $$ \log_{10}P=A+\frac{A\cdot C-B}{T}-\frac{C\cdot \log_{10}P}{T}$$
 
-Hacemos las constantes iguales a   $\space \space b_0=A$ ,    $\space \space b_1=A\cdot C-B$ ,    $\space \space b_2=-C$
+Usando constantes y variables auxiliares.
 
-y las variables    $y=\log_{10}P$ ,    $x_1=\frac{1}{T}$,     $x_2=\frac{\log_{10}P}{T}$.
+constantes auxiliares $\space \space b_0=A$ ;    $\space \space b_1=A\cdot C-B$ ;    $\space \space b_2=-C$
+
+y las variables auxiliares $\space \space y=\log_{10}P$; $\space \space x_1=\frac{1}{T}$; $\space \space x_2=\frac{\log_{10}P}{T}$.
+
+Llegamos a esta ecuación que es una ecuación que usaremos para realizar la refresión multilineal.
 
 $$y=b_0+b_1 x_1+b_2 x_2$$
 
@@ -38,18 +42,18 @@ $$y=b_0+b_1 x_1+b_2 x_2$$
 
 Se puede demostrar que las constantes de cualquier regresión multilineal por mínimos cuadrados pueden hallarse a partir de la siguiente relación matricial:
 
-$$\begin{bmatrix} N &\\ X_1 &\\ X_2&\\ \vdots \\ X_k \end{bmatrix} \times
+$$\begin{bmatrix} N \\ X_1 \\ X_2\\ \vdots \\ X_k \end{bmatrix} \times
 \begin{bmatrix} N^T & X_1^T & X_2^T & \cdots & X_k^T \end{bmatrix} \times
 \begin{bmatrix} b_0 \\ b_1 \\ b_2 \\ \vdots \\ b_k \end{bmatrix} =
 \begin{bmatrix} N \\ X_1 \\ X_2\\ \vdots \\ X_k \end{bmatrix} \times
 \begin{bmatrix} Y^T \end{bmatrix}\space\space\space\space\space (A)
 $$
 
-Donde: $k$: número de variables, $n$: número de datos que se tiene de cada variable.
+Donde: $k$: número de variables; $\space\space n$: número de datos que se tiene de cada variable.
 
-_Recuerde que la matriz transpuesta de cualquier $X$ es $X^T$_
+_La simbología para la transpueta de $X$ es $X^T$ Nótese que la $X$ es un vector fila y $X^T$ es un vector columna, y así para las demás variables_
 
-Los vectores en la fórmula son los siguientes vectores fila:
+Los vectores anteriormente mencionados se componen de los datos experimentales que se tiene para realizar la regresión, que tenemos a excepción de $N$.
 
 $$ N = \overbrace {(1, 1, ... , 1)}^ {n \hspace{1em}unos} \ $$
 
@@ -63,7 +67,7 @@ $$ X_k=(x_{k1}, x_{k2}, ... , x_{kn})$$
 
 $$ Y=(y_1, y_2, ... , y_n)$$
 
-Podemos simplificar aun más la ecuación $(A)$:
+Simplificando la ecuación $(A)$:
 
 $$ \begin{bmatrix} N^T & X_1^T & X_2^T & \cdots & X_k^T \end{bmatrix}\times \begin{bmatrix} b_0 \\ b_1 \\ b_2 \\ \vdots \\ b_k \end{bmatrix}=  \begin{bmatrix} Y^T \end{bmatrix}$$
 
@@ -78,22 +82,23 @@ Para determinar el grado de correlación podemos usar la siguiente fórmula cono
 
 $$R^2 =\frac{\displaystyle\sum_{i=1}^{n}(\hat{y}_i-\bar{y})}{\displaystyle\sum_{i=1}^{n}(y_i - \bar{y})}$$
 
-PARA ESTE PROBLEMA PARTICULAR 
+Siendo: 
 
 $y =\log_{10}P$
-$y_i$ corresponde a logaritmo de cada una de las presiones en nuestros datos
-$\bar{y}$ la promedio de los logaritmos de los datos
-$\hat{y}_i$ es el valor que obtenemos al aplicar nuestra fórmula de regresión con los valores $x_{1i}$ y $x_{2i}$
+$y_i$: corresponde a logaritmo de cada una de las presiones en nuestros datos
+$\bar{y}$: promedio de los logaritmos de las presiones de los datos
+$\hat{y}_i$: es el valor que obtenemos al aplicar nuestra fórmula de regresión con los valores $x_{1i}$ y $x_{2i}$
 
 ## Programando la solución con python
 
 Codificando con python tenemos:
+_Para replicar el ejercicio en python puede descargar el archivo de datos del benceno  [aquí](https://gist.github.com/EverVino/026e9e745ddd078b64d3b643b1068a9c/archive/86ae999a475390b759b53b3e1d6d90014e10b802.zip)_
 
 ```py
 import numpy as np
 import csv
-
 import matplotlib.pyplot as plt
+
 P, T = [], []
 
 # Lectura de datos de un archivo *.csv
@@ -104,6 +109,7 @@ with open("datos_antoine.csv", "r" ) as f:
         P.append(float(line["P"].replace(",", ".")))
         T.append(float(line["T"].replace(",", ".")))
 
+# Convirtiendo a numpy arrays
 presion = np.array(P)
 temp = np.array(T)
 
@@ -120,6 +126,7 @@ A = b[0]
 C = -b[2]
 B = A*C-b[1]
 print(A, B, C)
+
 # Resultado 6.867533528904103 832.260320713445 250.84525032625817
 
 # Graficando con matplotlib
