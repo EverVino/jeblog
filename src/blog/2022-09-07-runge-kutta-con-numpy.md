@@ -140,7 +140,7 @@ $$
 H_2O_2\Longrightarrow H_2O+1/2O_2
 $$
 
-Un modelos matemático de la fermentación de la bacteria _Pseudomonas Ovali_, el cuál produce ácido glucónico, ha sido desarrolaldo pro RAI y sus colaboradores. este modelo, el cual describe la dinámica en la fase logaritmica, puede ser descrito como sigue:
+Un modelos matemático de la fermentación de la bacteria _Pseudomonas Ovali_, el cuál produce ácido glucónico, ha sido desarrolaldo pro Rai y Constatinides, este modelo, el cual describe la dinámica en la fase logaritmica, puede ser descrito como sigue:
 
 Velocidad de crecimiento celular
 $$
@@ -172,7 +172,7 @@ $b_1-b_5$: Parámetros que son función de la temperatura y el pH.
 Las condicionas de operaciónson 30°C y el pH 6.6, para los cuales los parámetros son:
 $b_1=0.949$; $\space\space b_2=3.439$; $\space\space b_3=18.72$; $\space\space b_4=37.51$; $\space\space b_5= 1.169$.
 
-Con los datos proporcionados halle las concentraciones en el rango de 0h a 50h. Si las condiciones iniciales son:
+Con los datos proporcionados halle las concentraciones en el rango de 0h a 10h. Si las condiciones iniciales son:
 
 $y_1(0) = 0.5 \space U.O.D./mL$; $\space\space y_2(0)=0.0mg/mL$: $\space\space y_3(0)=0.0 mg/mL$; $\space\space y_4(0)=50.0 mg/mL$
 
@@ -213,7 +213,9 @@ def glucosa2ac_gluconico(Y):
 
 
 # Resolvemos el sistema de ecuaciones diferenciales con rk4
-rango_t = [0, 50]
+# Aunque las unidades de las constantes no nos la dan, podemos azumir que son 
+# compatibles con las unidades de tiempo en horas
+rango_t = [0, 10]
 h = 0.01
 t = np.arange(rango_t[0], rango_t[1] + h, h)
 # Definimos las condiciones iniciales
@@ -234,7 +236,7 @@ plt.plot(t, Y[:, 2], label="Ácido Glucónico")
 plt.plot(t, Y[:, 3], label="Glucosa")
 plt.legend(loc=5)
 plt.title("Conversión de la Glucosa en Ácido Glucónico", fontdict=font, pad=20)
-plt.xlabel("t[min]", labelpad=10, fontdict=font)
+plt.xlabel("t[h]", labelpad=10, fontdict=font)
 plt.ylabel("C[mol/L]", labelpad=10, fontdict=font)
 plt.grid()
 plt.show()

@@ -15,5 +15,6 @@ css
 ./design-files
 
 rk4.py
+solver.py
 
 __pycache__
