@@ -1,11 +1,11 @@
 ---
-title: Un sólo script en python para resolver cualquier sistema de EDO
+title: Resuelve tu sistema de EDO's con valores iniciales con con RK4, python y NumPy
 author: Ever Vino
 date: 2022-09-07
 tags: ['post', 'featured']
 image: /assets/blog/article-3.jpg
 imageAlt: 
-description: Como programar el método de Runge Kutta 4° orden para resolver cualquier sistema de ecuaciones diferenciales.
+description: Como programar el método de Runge Kutta 4° orden para resolver cualquier sistema de ecuaciones diferenciales con valores iniciales.
 ---
 
 ## Un poco acerca de NumPy
@@ -20,9 +20,9 @@ conda install numpy
 
 ## Método de runge kutta 4° orden
 
-el método de Runge Kutta 4°Orden, es una variación del método de euler, el cuál permite resolver ecuaciones diferenciales ordinarias con condiciones iniciales. Vease [Runge Kutta 4](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
+El método de Runge Kutta 4°Orden, es una variación del método de Euler, el cuál permite resolver ecuaciones diferenciales ordinarias con condiciones iniciales. Vease [Runge Kutta 4](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)
 
-La forma general de la variación es :
+La forma general de la variación del método de Euler es :
 
 $$
 y_{i+1} = y_i+\Phi h
@@ -46,9 +46,9 @@ k_4 = f(x_i+h,y_i+k_3h)
 \end{array}
 $$
 
-La función $f(x_i,y_i)$ es igual a $frac{dy}{dx}$ evaluada en $(x_i,y_i)$.
+La función $f(x_i,y_i)$ es igual a $\frac{dy}{dx}$ evaluada en $(x_i,y_i)$.
 
-Para crear nuestras funciones utilizaremos los vectores de numpy.
+Cambienos un poco la notación para dar a entender que usamos vectores.
 
 $$
 Z_{i+1}=Z_i+\frac{(M_1+2M_2+2M_3+M_4)}{6}h\\
@@ -63,9 +63,31 @@ M_4 = f(t_i+h,Z_i+m_3h)
 \end{array}
 $$
 
-Nótese que las letras mayusculas representa mayúsculas, de esta manera aprovechamos que los vectores en numpy las operaciones las hacen elemento a elemento, de esta manera no importa cuantas ecuaciones diferenciales tengamos en nuestro sistemas siempre las podremos resolver con un simple ciclo.
+La codificación en python usando NumPy será muy similar a la notación vectorial que usamos arriba, la ventaja más importante trabajando con Numpy es el uso de sus vectores o matrices con el tipo de dato de numpy-arrays, estos nos permiten realizar operaciones entre ellas más fácilmente y al mismo tiempo tratarlas como si fueran listas de python.
 
-Normalmente en los sistemas de ecuaciones diferenciales no aparece la variable independente (no aparece la variable tiempo $t$) por lo que las derivadas son independientes de la misma. En la codificiación se notará eso, se omitira la variable independiente $t$.
+Por ejemplo si tenemos un vector $A$ con componentes $(a_1,a_2,a_3)$ y $B$ con $(b_1,b_2,b_3)$ y queremos obtener un vector $C$ con componentes $(a_1/2+4b_1,a_2/2+4b_2,a_3/2+4b_3)$ esto se lo hace fácilmente con los numpy-array, simplemente haciendo las operación como si fueran valores numéricos:
+
+$$
+A = (a_1,a_2,a_3)\\
+B = (b_1,b_2,b_3)\\
+C = A/2+4*B
+$$
+
+Con numpy array dando valores numéricos a los componenetes de los vectores $A$ y $B$.
+
+```py
+import numpy as np
+A = np.array([1, 2, 3])
+B = np.array([2, 4, 6])
+C = A / 2 + 4 * B
+
+print(C)
+# Resultado [ 8.5 17.  25.5]
+```
+
+Usted pude hacer las comprobaciones correspondientes con el código mostrado, si cada elemento de un vector numpy se le puede asignar los valores así de fácil, la codificación del método se simplifica bastante.
+
+_Normalmente en los sistemas de ecuaciones diferenciales no aparece la variable independente (tiempo $t$) por lo que las derivadas son independientes de la misma. En la codificiación se notará eso, se omitira la variable independiente $t$._
 
 Codificando RK4
 
@@ -118,7 +140,7 @@ Ahora que ya tenemos programado nuestro método podemos probarlo resolviendo un 
 
 ### Conversión de Glucosa a Ácido glucónico
 
-La conversión de glucosa a Ácido Glucónico es una simple oxidación del grupo aldehido del azucar a uno del grupo carboxilo. Esta transfomración puede ser llevada a cabo por un microorganismo en un proceso de fermentación. La enzima Glucosa Gxidasa presente en el microorganismo, convierte la Glucosa a Gluconolactona. A su vez la gluconolactona se hidroliza a la forma de ácido glucónico. Todo el proceso de fermentación puede ser descrito como sigue:
+La conversión de glucosa a Ácido Glucónico es una simple oxidación del grupo aldehido del azucar a uno del grupo carboxilo. Esta transformación puede ser llevada a cabo por un microorganismo en un proceso de fermentación. La enzima Glucosa Oxidasa presente en el microorganismo, convierte la Glucosa a Gluconolactona. A su vez la gluconolactona se hidroliza a la forma de ácido glucónico. Todo el proceso de fermentación puede ser descrito como sigue:
 
 Crecimiento celular
 $$
