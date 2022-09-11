@@ -123,6 +123,27 @@ picture {
   display: block;
 }
 
+/*icons*/
+/* .iconos {
+  width: 40px;
+  height: 40px;
+} */
+
+path {
+  transform: scale(2);
+}
+
+path.in {
+  transform:scale(1.5);
+}
+
+.container-rss{
+  display:flex;
+  gap:8%;
+  justify-content:end;
+ 
+  
+}
 /* Inherit fonts for inputs and buttons */
 input,
 button,
