@@ -1,5 +1,6 @@
 # dependencies installed by npm
 node_modules
+numerical_methods
 
 # build artefacts
 public

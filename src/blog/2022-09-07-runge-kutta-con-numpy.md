@@ -1,5 +1,5 @@
 ---
-title: Resuelve tu sistema de EDO's con valores iniciales con con RK4, python y NumPy
+title: Resuelve tu sistema de EDO's con valores iniciales con RK4, Python y NumPy
 author: Ever Vino
 date: 2022-09-07
 tags: ['post', 'featured']
